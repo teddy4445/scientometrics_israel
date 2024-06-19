@@ -1699,6 +1699,11 @@ body {
     display: inline-block;
     margin: 0px 10px;
   }
+  
+  	.team-row{
+		margin-top: 20px;
+	}
+
 }
 
 @media (max-width: 992px) {
@@ -1706,6 +1711,9 @@ body {
   .header-area .main-nav #search i {
     display: none;
   }
+	.team-row{
+		margin-top: 20px;
+	}
   .header-area .main-nav .logo h1 {
     font-size: 34px;
   }
@@ -1898,12 +1906,17 @@ body {
   }
   .fun-facts:before {
     width: 95%;
+
   }
 }
 
+@media (min-width: 993px) {
+	.team-row{
+		margin-top: 150px;
+	}
+}
 
 
-// style.css
 .icon-scholar {
   content: url('assets/images/google-scholar.svg');
   height: 1em;
