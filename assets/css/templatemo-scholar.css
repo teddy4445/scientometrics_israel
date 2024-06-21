@@ -1138,8 +1138,7 @@ Team Style
 */
 
 .team {
-  margin-top: 100px;
-    padding-top: 140px;
+  margin-top: 20px;
 }
 
 .team-member {
@@ -1703,6 +1702,10 @@ body {
   	.team-row{
 		margin-top: 20px;
 	}
+	
+	.first-team-row{
+		padding-bottom: 80px;
+	}
 
 }
 
@@ -1806,7 +1809,7 @@ body {
     width: 95%;
   }
   .team {
-    margin-top: 160px;
+    margin-top: 40px;
   }
   .team-member {
     margin-bottom: 140px;
@@ -1895,6 +1898,10 @@ body {
   footer {
     margin-top: 30px;
   }
+	
+	.first-team-row{
+		padding-bottom: 60px;
+	}
 }
 
 @media (max-width: 1200px) {
