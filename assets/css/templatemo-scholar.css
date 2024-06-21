@@ -1928,3 +1928,20 @@ body {
 	-webkit-transition: -webkit-transform .3s ease-out;
 	transition: transform .3s ease-out;
 }
+
+.content-paragraphs{
+	
+	text-align: left;
+	font-size: 16pt !important;
+}
+
+.content-paragraphs p{
+	margin-bottom: 10px;
+	font-size: 12pt !important;
+}
+
+.content-paragraphs-il{
+	margin-bottom: 4px;
+	font-size: 12pt !important;
+	margin-left: 20px;
+}
