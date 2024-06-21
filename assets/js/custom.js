@@ -214,5 +214,25 @@
             });
         });
     }
+	
+	
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Generate the email template parameters
+        var templateParams = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
+
+        // Send the email
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+            .then(function(response) {
+                alert("Your message has been sent!");
+            }, function(error) {
+                alert("We had an issue sending you message...");
+            });
+    });
 
 })(window.jQuery);
