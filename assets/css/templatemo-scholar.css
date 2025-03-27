@@ -1952,3 +1952,35 @@ body {
 	font-size: 12pt !important;
 	margin-left: 20px;
 }
+
+.center {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 8vh; /* Full viewport height */
+	min-width: 320px;
+}
+
+.payment-message {
+    font-family: Arial, sans-serif;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.good {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.bad {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
