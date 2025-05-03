@@ -15,7 +15,7 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a1e808f913.js" crossorigin="anonymous"></script>
-	<script src="https://www.paypal.com/sdk/js?client-id=AeIKiuY8xLEP9nbOd62gB4JdWVd_VRR-yf0EKDcEpIYkmNQr4l3qkrC-mdvZeLPwYwSuOKE4HjIvkQJl&currency=ILS"></script>
+	<script src="https://www.paypal.com/sdk/js?client-id=BAAkvR56QHrcDuXMuvL0nc6_ooKYHMBLebrz0DS-421-7N5t7baDtNu-sfz2TCcPBqiWZo-IrPWpJy1M7Y&components=hosted-buttons&disable-funding=venmo&currency=ILS"> </script>
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
@@ -93,7 +93,7 @@
           <div class="section-heading">
             <h2>Register as a member of ISAC for 2025</h2>
 			<div class="content-paragraphs">
-				<div class="center">
+				<div class="center"  style="display: none;">
 					<p id="message" class="payment-message"></p> <!-- This will show success or cancel message -->
 				</div>
 				<br>
@@ -103,9 +103,7 @@
 				<p style="padding-bottom: 30px;">
 				Your payment is securely processed through <b>PayPal</b>, a trusted and encrypted payment platform. Once your payment is completed, <a href="mailto:shekhtl1@biu.ac.il">Dr. Louis Shekhtman</a> will provide you with an official invoice shortly.
 				</p>
-				<div class="center"  style="padding-bottom: 30px;">
-					<div id="paypal-button-container"></div>
-				</div>
+				<div style="text-align: center;" id="paypal-container-WG5FA3ASR4RCW"></div>
 				<p>
 				If you have any questions or require further assistance, please feel free to contact us. We appreciate your support!
 				</p>
@@ -125,59 +123,11 @@
   </footer>
 
 <script>
-	// Function to get URL parameters
-	function getQueryParam(param) {
-		let params = new URLSearchParams(window.location.search);
-		return params.get(param);
-	}
-
-	// Show success or cancel message if redirected with GET parameters
-	window.onload = function() {
-		let name = getQueryParam("name");
-		let email = getQueryParam("email");
-		let status = getQueryParam("status");
-		let messageElement = document.getElementById("message");
-
-		if (status === "success" && name && email) {
-			document.getElementById("message").innerHTML = '<strong>Payment Successful!</strong> Thank you, ${name}. A confirmation email will be sent to ${email}';
-			messageElement.classList.add("good");
-			messageElement.classList.remove("bad");
-		} else if (status === "cancel") {
-			document.getElementById("message").innerHTML = '<strong>Payment Canceled.</strong> You can try again anytime.';
-			messageElement.classList.add("bad");
-			messageElement.classList.remove("good");
-		}
-		
-		if (typeof paypal !== "undefined") {
-			paypal.Buttons({
-				createOrder: function(data, actions) {
-					return actions.order.create({
-						purchase_units: [{
-							amount: { value: '105.00', currency_code: 'ILS' }
-						}]
-					});
-				},
-				onApprove: function(data, actions) {
-					return actions.order.capture().then(function(details) {
-						let payerName = details.payer.name.given_name + " " + details.payer.name.surname;
-						let payerEmail = details.payer.email_address;
-
-						// Redirect to the same page with success message
-						window.location.href = window.location.pathname + 
-							`?status=success&name=${encodeURIComponent(payerName)}&email=${encodeURIComponent(payerEmail)}`;
-					});
-				},
-				onCancel: function(data) {
-					// Redirect to the same page with cancel message
-					window.location.href = window.location.pathname + `?status=cancel`;
-				}
-			}).render('#paypal-button-container');
-		} 
-		else {
-			console.error("PayPal SDK failed to load.");
-		}
-	};
+  paypal.HostedButtons({
+	hostedButtonId: "WG5FA3ASR4RCW",
+  }).render("#paypal-container-WG5FA3ASR4RCW")
 </script>
+
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
