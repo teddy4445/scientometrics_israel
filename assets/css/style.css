@@ -1,0 +1,53 @@
+.card-bg {
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px; /* Slightly larger border-radius for modern feel */
+  padding: 30px; /* More padding for better spacing */
+  display: flex; /* Use flexbox to center content */
+  align-items: center;
+  justify-content: center;
+  min-height: 350px; /* Ensure a decent height for the card */
+  position: relative; /* Needed for potential pseudo-elements or overlays */
+  overflow: hidden; /* Important for border-radius on background */
+}
+
+/* This is the key for the "glass" effect on the text content */
+.glass-effect {
+  background-color: rgba(255, 255, 255, 0.15); /* Slightly transparent white background */
+  backdrop-filter: blur(10px) saturate(180%); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px) saturate(180%); /* For Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+  border-radius: 12px; /* Slightly less than parent for visual depth */
+  padding: 25px; /* Ample inner padding */
+  color: white; /* Default text color for contrast */
+  text-align: center; /* Center the text within the glass pane */
+  max-width: 80%; /* Control width of the inner content */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
+}
+
+/* Adjustments for the text elements inside the glass effect */
+.glass-effect .header-text h2 {
+  font-size: 2.2em; /* Larger, more impactful heading */
+  margin-bottom: 10px;
+  color: white; /* Ensure heading is white */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Stronger text shadow */
+  font-weight: 700; /* Bolder font */
+}
+
+.glass-effect .header-text .category {
+  display: block; /* Ensure category is on its own line */
+  font-size: 0.9em;
+  opacity: 0.8; /* Slightly less prominent */
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9); /* Slightly off-white for category */
+}
+
+.glass-effect .header-text p {
+  font-size: 1.1em; /* Slightly larger paragraph text */
+  line-height: 1.6; /* Improved readability */
+  margin-bottom: 25px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Lighter text shadow for paragraph */
+  color: rgba(255, 255, 255, 0.9);
+}
